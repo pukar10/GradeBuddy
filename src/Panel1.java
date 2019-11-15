@@ -97,6 +97,8 @@ public class Panel1 extends JPanel implements ActionListener {
         Course.initializeWeightsArray(numAss);
         Course.initializeCourseNames(numAss);
         Course.initializeGrades(numAss);
+        Course.eachAssWorth = new double[numAss];    //FIX CHANGE TO METHOD TO INITIALIZE IT.
+        Course.quantity = new int[numAss];
         frame.panel3.grades = new JTextField[numAss][];
 
         // initialize all the arrays in panel2 and next button

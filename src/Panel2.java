@@ -43,6 +43,7 @@ public class Panel2 extends JPanel implements ActionListener {
             String weight = assignmentWeights[i].getText();
             int quantity = Integer.parseInt(assignmentQuantities[i].getText());
 
+            Course.quantity[i] = quantity;
             Course.assignmentTypeNames[i] = assignmentName;
             Course.weights[i] = Integer.parseInt(weight);
             Course.setNumGrades(i, quantity);
