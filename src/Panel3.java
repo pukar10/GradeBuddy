@@ -7,7 +7,8 @@ public class Panel3 extends JPanel implements ActionListener {
 
     JTextField grades[][];
     JButton next;
-
+    
+    
     public Panel3(){
         setLayout(null);
         setBounds(0, 0, 600, 800);
@@ -45,12 +46,12 @@ public class Panel3 extends JPanel implements ActionListener {
         // check if Course.grades array is properly filled in
         ///*
 
-        for(int i = 0; i < Course.grades.length; i++){
-            for(int j = 0; j < Course.grades[i].length; j++){
-                double grade = Course.grades[i][j];
-                JOptionPane.showMessageDialog(null, "DEBUG: "+grade);
-            }
-        }
+        // for(int i = 0; i < Course.grades.length; i++){
+        //     for(int j = 0; j < Course.grades[i].length; j++){
+        //         double grade = Course.grades[i][j];
+        //         JOptionPane.showMessageDialog(null, "DEBUG: "+grade);
+        //     }
+        // }
 
          //*/
 
