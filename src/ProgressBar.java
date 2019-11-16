@@ -10,25 +10,25 @@ import javax.swing.event.*;
 // got this code from https://stackoverflow.com/questions/12524121/jprogressbar-how-to-change-colour-based-on-progress
 
 public class ProgressBar {
-	public JComponent makeUI() {
+	public JComponent makeUI(int finalGrade) {
 		final JProgressBar progressBar = new JProgressBar();
 		progressBar.setOpaque(false);
 		progressBar.setUI(new GradientPalletProgressBarUI());
-		
+
 		JPanel p = new JPanel();
 		p.add(progressBar);
-		p.add(new JButton(new AbstractAction("Start") {
+		p.add(new JButton(new AbstractAction("Grade") {
 			@Override public void actionPerformed(ActionEvent e) {
 				SwingWorker<Void,Void> worker = new SwingWorker<Void,Void>() {
 					@Override public Void doInBackground() {
-						int current = 0, lengthOfTask = 100;
+						int current = 0, lengthOfTask = 80; // time it takes to complete loading progress bar
 						while(current<=lengthOfTask && !isCancelled()) {
 							try { // dummy task
 								Thread.sleep(50);
 							} catch(InterruptedException ie) {
 								return null;
 							}
-							setProgress(100 * current / lengthOfTask);
+							setProgress(finalGrade * current / lengthOfTask); // how much it loads
 							current++;
 						}
 						return null;
@@ -40,21 +40,21 @@ public class ProgressBar {
 		}));
 		return p;
 	}
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			@Override public void run() {
-				createAndShowGUI();
-			}
-		});
-	}
-	public static void createAndShowGUI() {
-		JFrame frame = new JFrame();
-		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		frame.getContentPane().add(new ProgressBar().makeUI());
-		frame.setSize(320, 240);
-		frame.setLocationRelativeTo(null);
-		frame.setVisible(true);
-	}
+	// public static void progressBarMain() {
+	// 	EventQueue.invokeLater(new Runnable() {
+	// 		@Override public void run() {
+	// 			createAndShowGUI();
+	// 		}
+	// 	});
+	// }
+	// public static void createAndShowGUI() {
+	// 	JFrame frame = new JFrame();
+	// 	frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+	//  frame.getContentPane().add(new GradientPalletProgressBarDemo().makeUI());
+	// 	frame.setSize(320, 240);
+	// 	frame.setLocationRelativeTo(null);
+	// 	frame.setVisible(true);
+	// }
 }
 class ProgressListener implements PropertyChangeListener {
 	private final JProgressBar progressBar;
@@ -87,7 +87,7 @@ class GradientPalletProgressBarUI extends BasicProgressBarUI {
 		g2.setPaint(new LinearGradientPaint(start, end, dist, colors));
 		g2.fillRect(0, 0, 100, 1);
 		g2.dispose();
-		
+
 		int width  = image.getWidth(null);
 		int[] pallet = new int[width];
 		PixelGrabber pg = new PixelGrabber(image, 0, 0, width, 1, pallet, 0, width);
@@ -122,13 +122,13 @@ class GradientPalletProgressBarUI extends BasicProgressBarUI {
 		int cellSpacing = getCellSpacing();
 		// amount of progress to draw
 		int amountFull = getAmountFull(b, barRectWidth, barRectHeight);
-		
+
 		if(progressBar.getOrientation() == JProgressBar.HORIZONTAL) {
 			// draw the cells
 			float x = amountFull / (float)barRectWidth;
 			g.setColor(getColorFromPallet(pallet, x));
 			g.fillRect(b.left, b.top, amountFull, barRectHeight);
-			
+
 		} else { // VERTICAL
 			//...
 		}

@@ -35,6 +35,7 @@ public class Login extends JFrame {
         panel2.setVisible(false);
         panel3.setVisible(false);
         panel4.setVisible(false);
+        
 
         // Frame stuff
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
