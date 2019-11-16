@@ -93,7 +93,7 @@ public class Panel1 extends JPanel implements ActionListener {
         Course.courseName = courseName.getText();
         Course.goalGrade = Double.parseDouble(goalGrade.getText());
         Course.professor = professorName.getText();
-        Course.yourName = name.getText();
+        Course.studentName = name.getText();
         Course.initializeWeightsArray(numAss);
         Course.initializeCourseNames(numAss);
         Course.initializeGrades(numAss);
@@ -142,11 +142,11 @@ public class Panel1 extends JPanel implements ActionListener {
 
         ///*
 
-        // JOptionPane.showMessageDialog(null, "DEBUG: course.numAssignmentTypes\n"+Course.numAssignmentTypes);
-        // JOptionPane.showMessageDialog(null, "DEBUG: course.courseName\n"+Course.courseName);
-        // JOptionPane.showMessageDialog(null, "DEBUG: course.goalGrade\n"+Course.goalGrade);
-        // JOptionPane.showMessageDialog(null, "DEBUG: course.professor\n"+Course.professor);
-        // JOptionPane.showMessageDialog(null, "DEBUG: course.yourName\n"+Course.yourName);
+        JOptionPane.showMessageDialog(null, "DEBUG: course.numAssignmentTypes\n"+Course.numAssignmentTypes);
+        JOptionPane.showMessageDialog(null, "DEBUG: course.courseName\n"+Course.courseName);
+        JOptionPane.showMessageDialog(null, "DEBUG: course.goalGrade\n"+Course.goalGrade);
+        JOptionPane.showMessageDialog(null, "DEBUG: course.professor\n"+Course.professor);
+        JOptionPane.showMessageDialog(null, "DEBUG: course.yourName\n"+Course.studentName);
 
          //*/
     }
