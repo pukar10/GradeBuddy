@@ -41,6 +41,9 @@ public class Panel3 extends JPanel implements ActionListener {
         
         setVisible(false);
         frame.panel4.setVisible(true);
+        
+        
+        
 
         // DEBUG
         // check if Course.grades array is properly filled in

@@ -1,3 +1,5 @@
+import sun.jvm.hotspot.ui.ProgressBarPanel;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.*;
@@ -14,14 +16,15 @@ public class ProgressBar {
 		final JProgressBar progressBar = new JProgressBar();
 		progressBar.setOpaque(false);
 		progressBar.setUI(new GradientPalletProgressBarUI());
-
+		progressBar.setStringPainted(true); // displays percentage inside progress bar
+		
 		JPanel p = new JPanel();
 		p.add(progressBar);
 		p.add(new JButton(new AbstractAction("Grade") {
 			@Override public void actionPerformed(ActionEvent e) {
 				SwingWorker<Void,Void> worker = new SwingWorker<Void,Void>() {
 					@Override public Void doInBackground() {
-						int current = 0, lengthOfTask = 80; // time it takes to complete loading progress bar
+						int current = 0, lengthOfTask = 50; // time it takes to complete loading progress bar
 						while(current<=lengthOfTask && !isCancelled()) {
 							try { // dummy task
 								Thread.sleep(50);
@@ -38,9 +41,13 @@ public class ProgressBar {
 				worker.execute();
 			}
 		}));
+		
+		progressBar.setPreferredSize(new Dimension(400, 30));
+		//progressBar.setLayout(new GridLayout(1, 2));
+		
 		return p;
 	}
-	// public static void progressBarMain() {
+	// public static void main(String[] args) {
 	// 	EventQueue.invokeLater(new Runnable() {
 	// 		@Override public void run() {
 	// 			createAndShowGUI();
@@ -50,8 +57,8 @@ public class ProgressBar {
 	// public static void createAndShowGUI() {
 	// 	JFrame frame = new JFrame();
 	// 	frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-	//  frame.getContentPane().add(new GradientPalletProgressBarDemo().makeUI());
-	// 	frame.setSize(320, 240);
+	//     frame.getContentPane().add(new ProgressBar().makeUI(100));
+	// 	frame.setSize(800, 600);
 	// 	frame.setLocationRelativeTo(null);
 	// 	frame.setVisible(true);
 	// }

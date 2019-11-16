@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -28,6 +29,9 @@ public class Panel4 extends JPanel implements ActionListener {
         percentClassCompleted.setBounds(290, 150, 50, 50);
 
         add(congrats);
+        JComponent pb = new ProgressBar().makeUI(92);
+        pb.setBounds(100,250,500,300);
+        add(pb);
         add(currGradeLabel);
         add(percentClassCompleted);
     }
