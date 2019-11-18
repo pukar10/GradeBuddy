@@ -36,11 +36,16 @@ public class Panel3 extends JPanel implements ActionListener {
             }
         }
 
-        frame.panel4.revalidate();
-        frame.panel4.repaint();
+        Course.calcGrade();
+        Panel4 panel4 = new Panel4();
+        frame.add(panel4);
+        panel4.setVisible(true);
+
+        panel4.revalidate();
+        panel4.repaint();
         
         setVisible(false);
-        frame.panel4.setVisible(true);
+        panel4.setVisible(true);
         
         
         

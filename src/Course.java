@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 public class Course {
 
     static String studentName;
@@ -87,24 +89,37 @@ public class Course {
         double[] totalScores = new double[Course.numAssignmentTypes];
 
         double totalScore = 0;
+        double totalPoints = 0;
         double score = 0;
+
+
         for(int i = 0; i < Course.numAssignmentTypes; i++){
             weight[i] = (double)weights[i]/quantity[i];
+
             int numGrades = 0;
             for(int j = 0; j < grades[i].length; j++){
                 if(grades[i][j] == -1){
                     continue;
                 }
                 score = (grades[i][j] / 100) * weight[i];
+                totalScore += score;
+                totalPoints += weight[i];
                 numGrades++;
             }
-            totalScores[i] = score;
+            totalScores[i] = totalScore;
             percentOfClassCompletion += numGrades * weight[i];
-            totalScore += score;
+            //JOptionPane.showMessageDialog(null, "DEBUG: weight["+i+"] "+weight[i]);
         }
+        JOptionPane.showMessageDialog(null, "DEBUG: totalScore: " + totalScore);
+        JOptionPane.showMessageDialog(null, "DEBUG: totalPoints: " + totalPoints);
 
-        currentGrade = totalScore/percentOfClassCompletion;
+        currentGrade = (totalScore/totalPoints) * 100;
+        JOptionPane.showMessageDialog(null, "DEBUG: currGrade " + currentGrade);
+        JOptionPane.showMessageDialog(null, "DEBUG: perCompleted " + percentOfClassCompletion);
     }
+
+
+
 
     /**
      * Calculates and returns the cumulative percent of the course that has been completed so far.

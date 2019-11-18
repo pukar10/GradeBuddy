@@ -1,4 +1,3 @@
-import sun.jvm.hotspot.ui.ProgressBarPanel;
 
 import java.awt.*;
 import java.awt.event.*;

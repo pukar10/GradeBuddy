@@ -18,7 +18,6 @@ public class Panel4 extends JPanel implements ActionListener {
 
         // Calculations
         // calcGrade sets currentGrade and percentOfClassCompletion
-        Course.calcGrade();
         double currGrade = Course.currentGrade;
         double perClassComp = Course.percentOfClassCompletion;
 
@@ -29,7 +28,7 @@ public class Panel4 extends JPanel implements ActionListener {
         percentClassCompleted.setBounds(290, 150, 50, 50);
 
         add(congrats);
-        JComponent pb = new ProgressBar().makeUI(92);
+        JComponent pb = new ProgressBar().makeUI((int)Course.percentOfClassCompletion);
         pb.setBounds(100,250,500,300);
         add(pb);
         add(currGradeLabel);
