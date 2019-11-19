@@ -6,6 +6,7 @@ import java.awt.image.*;
 import java.beans.*;
 import javax.swing.*;
 import javax.swing.plaf.basic.*;
+import javax.swing.event.*;
 
 // got this code from https://stackoverflow.com/questions/12524121/jprogressbar-how-to-change-colour-based-on-progress
 
@@ -18,11 +19,11 @@ public class ProgressBar {
 		
 		JPanel p = new JPanel();
 		p.add(progressBar);
-		p.add(new JButton(new AbstractAction("Course Completed") {
+		p.add(new JButton(new AbstractAction("Show") {
 			@Override public void actionPerformed(ActionEvent e) {
 				SwingWorker<Void,Void> worker = new SwingWorker<Void,Void>() {
 					@Override public Void doInBackground() {
-						int current = 0, lengthOfTask = 45; // time it takes to complete loading progress bar
+						int current = 0, lengthOfTask = 50; // time it takes to complete loading progress bar
 						while(current<=lengthOfTask && !isCancelled()) {
 							try { // dummy task
 								Thread.sleep(50);
@@ -40,7 +41,7 @@ public class ProgressBar {
 			}
 		}));
 		
-		progressBar.setPreferredSize(new Dimension(800, 30));
+		progressBar.setPreferredSize(new Dimension(400, 30));
 		//progressBar.setLayout(new GridLayout(1, 2));
 		
 		return p;

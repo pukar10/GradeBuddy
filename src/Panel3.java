@@ -39,6 +39,53 @@ public class Panel3 extends JPanel implements ActionListener {
         Course.calcGrade();
         Panel4 panel4 = new Panel4();
         frame.add(panel4);
+        if(Course.currentGrade > 90.0){
+            JLabel labelGrade = new JLabel("A");
+            labelGrade.setPreferredSize(new Dimension(100, 100));
+            labelGrade.setBounds(330, 130, 50, 50);
+            labelGrade.setFont(new Font(labelGrade.getFont().getName(), labelGrade.getFont().getStyle(), 20));
+            panel4.add(labelGrade);
+
+            JLabel labelFeedback = new JLabel("Perfect! Keep it up!");
+            labelFeedback.setBounds(300, 500, 100, 30);
+            panel4.add(labelFeedback);
+        }else if(Course.currentGrade > 80.0){
+            JLabel labelGrade = new JLabel("B");
+            labelGrade.setPreferredSize(new Dimension(100, 100));
+            labelGrade.setBounds(330, 500, 100, 100);
+            panel4.add(labelGrade);
+
+            JLabel labelFeedback = new JLabel("Almost there!");
+            labelFeedback.setBounds(300, 500, 100, 30);
+            panel4.add(labelFeedback);
+        }else if(Course.currentGrade > 70.0){
+            JLabel labelGrade = new JLabel("C");
+            labelGrade.setPreferredSize(new Dimension(100, 100));
+            labelGrade.setBounds(330, 500, 100, 100);
+            panel4.add(labelGrade);
+
+            JLabel labelFeedback = new JLabel("C's get Degree's");
+            labelFeedback.setBounds(300, 500, 100, 30);
+            panel4.add(labelFeedback);
+        }else if(Course.currentGrade > 60){
+            JLabel labelGrade = new JLabel("D");
+            labelGrade.setPreferredSize(new Dimension(100, 100));
+            labelGrade.setBounds(330, 500, 100, 100);
+            panel4.add(labelGrade);
+
+            JLabel labelFeedback = new JLabel("ouch");
+            labelFeedback.setBounds(300, 500, 100, 30);
+            panel4.add(labelFeedback);
+        }else{
+            JLabel labelGrade = new JLabel("F");
+            labelGrade.setPreferredSize(new Dimension(100, 100));
+            labelGrade.setBounds(330, 130, 100, 100);
+            panel4.add(labelGrade);
+
+            JLabel labelFeedback = new JLabel("Get some help");
+            labelFeedback.setBounds(300, 500, 100, 30);
+            panel4.add(labelFeedback);
+        }
         panel4.setVisible(true);
 
         panel4.revalidate();
