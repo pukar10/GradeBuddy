@@ -16,7 +16,7 @@ public class LoginPanel extends JPanel implements ActionListener {
         panel1 = new Panel1();
 
         setLayout(null);
-        setBounds(0, 0, 600, 800);
+        setBounds(0, 0, 800, 600);
 
         username = new JLabel("Username");
         username.setBounds(250, 250, 75, 20);

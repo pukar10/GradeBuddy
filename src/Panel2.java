@@ -11,7 +11,7 @@ public class Panel2 extends JPanel implements ActionListener {
 
     public Panel2(){
         setLayout(null);
-        setBounds(0, 0, 600, 800);
+        setBounds(0, 0, 800, 600);
 
         JLabel type, quantity, weight;
 

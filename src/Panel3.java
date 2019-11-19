@@ -11,7 +11,7 @@ public class Panel3 extends JPanel implements ActionListener {
     
     public Panel3(){
         setLayout(null);
-        setBounds(0, 0, 600, 800);
+        setBounds(0, 0, 800, 600);
 
         next = new JButton("Next");
         next.addActionListener(this);

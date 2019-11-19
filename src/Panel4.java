@@ -9,13 +9,13 @@ public class Panel4 extends JPanel implements ActionListener {
 
     public Panel4(){
         setLayout(null);
-        setBounds(0, 0, 600, 800);
+        setBounds(0, 0, 800, 600);
 
         eachAssWorthLabels = new JLabel[Course.numAssignmentTypes];
     
         // progress bar
         JComponent pb = new ProgressBar().makeUI((int)Course.percentOfClassCompletion);
-        pb.setBounds(150,0,500,80);
+        pb.setBounds(0,-5,800,80);
 
         // JLabel congrats = new JLabel("WE DID IT! Holy guacamole");
         // congrats.setBounds(350, 20, 200, 30);
