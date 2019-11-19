@@ -10,7 +10,7 @@ public class Panel4 extends JPanel implements ActionListener {
 
     public Panel4(){
         setLayout(null);
-        setBounds(0, 0, 600, 800);
+        setBounds(0, 0, 800, 600);
 
         eachAssWorthLabels = new JLabel[Course.numAssignmentTypes];
 
@@ -32,7 +32,7 @@ public class Panel4 extends JPanel implements ActionListener {
 
         //add(congrats);
         JComponent pb = new ProgressBar().makeUI((int)Course.percentOfClassCompletion);
-        pb.setBounds(100,250,500,300);
+        pb.setBounds(0,-5,800,100);
 
         add(pb);
         add(currGradeLabel);

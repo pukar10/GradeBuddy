@@ -41,7 +41,7 @@ public class ProgressBar {
 			}
 		}));
 		
-		progressBar.setPreferredSize(new Dimension(400, 30));
+		progressBar.setPreferredSize(new Dimension(800, 30));
 		//progressBar.setLayout(new GridLayout(1, 2));
 		
 		return p;
