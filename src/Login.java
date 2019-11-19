@@ -15,7 +15,7 @@ public class Login extends JFrame {
         // set size of frame and layout of frame
         setSize(800, 600);
         setLayout(null);
-       // setLocationRelativeTo(null); // center frame
+        setLocationRelativeTo(null); // center frame
 
         // initialize all panels we use in the frame
         loginPanel = new LoginPanel();
