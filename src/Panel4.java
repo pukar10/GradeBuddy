@@ -12,9 +12,13 @@ public class Panel4 extends JPanel implements ActionListener {
         setBounds(0, 0, 600, 800);
 
         eachAssWorthLabels = new JLabel[Course.numAssignmentTypes];
+    
+        // progress bar
+        JComponent pb = new ProgressBar().makeUI((int)Course.percentOfClassCompletion);
+        pb.setBounds(150,0,500,80);
 
-        JLabel congrats = new JLabel("WE DID IT! Holy guacamole");
-        congrats.setBounds(350, 20, 200, 30);
+        // JLabel congrats = new JLabel("WE DID IT! Holy guacamole");
+        // congrats.setBounds(350, 20, 200, 30);
 
         // Calculations
         // calcGrade sets currentGrade and percentOfClassCompletion
@@ -27,9 +31,7 @@ public class Panel4 extends JPanel implements ActionListener {
         JLabel percentClassCompleted = new JLabel(String.valueOf(perClassComp));
         percentClassCompleted.setBounds(290, 150, 50, 50);
 
-        add(congrats);
-        JComponent pb = new ProgressBar().makeUI((int)Course.percentOfClassCompletion);
-        pb.setBounds(100,250,500,300);
+        //add(congrats);
         add(pb);
         add(currGradeLabel);
         add(percentClassCompleted);

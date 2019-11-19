@@ -110,12 +110,12 @@ public class Course {
             percentOfClassCompletion += numGrades * weight[i];
             //JOptionPane.showMessageDialog(null, "DEBUG: weight["+i+"] "+weight[i]);
         }
-        JOptionPane.showMessageDialog(null, "DEBUG: totalScore: " + totalScore);
-        JOptionPane.showMessageDialog(null, "DEBUG: totalPoints: " + totalPoints);
-
-        currentGrade = (totalScore/totalPoints) * 100;
-        JOptionPane.showMessageDialog(null, "DEBUG: currGrade " + currentGrade);
-        JOptionPane.showMessageDialog(null, "DEBUG: perCompleted " + percentOfClassCompletion);
+        // JOptionPane.showMessageDialog(null, "DEBUG: totalScore: " + totalScore);
+        // JOptionPane.showMessageDialog(null, "DEBUG: totalPoints: " + totalPoints);
+        //
+        // currentGrade = (totalScore/totalPoints) * 100;
+        // JOptionPane.showMessageDialog(null, "DEBUG: currGrade " + currentGrade);
+        // JOptionPane.showMessageDialog(null, "DEBUG: perCompleted " + percentOfClassCompletion);
     }
 
 
