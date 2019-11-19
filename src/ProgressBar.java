@@ -19,7 +19,7 @@ public class ProgressBar {
 		
 		JPanel p = new JPanel();
 		p.add(progressBar);
-		p.add(new JButton(new AbstractAction("Show") {
+		p.add(new JButton(new AbstractAction("Are we there yet?") {
 			@Override public void actionPerformed(ActionEvent e) {
 				SwingWorker<Void,Void> worker = new SwingWorker<Void,Void>() {
 					@Override public Void doInBackground() {

@@ -14,8 +14,8 @@ public class Panel4 extends JPanel implements ActionListener {
 
         eachAssWorthLabels = new JLabel[Course.numAssignmentTypes];
 
-        JLabel congrats = new JLabel("WE DID IT! Holy guacamole");
-        congrats.setBounds(290, 20, 200, 30);
+        // JLabel congrats = new JLabel("WE DID IT! Holy guacamole");
+        // congrats.setBounds(290, 20, 200, 30);
 
         // Calculations
         // calcGrade sets currentGrade and percentOfClassCompletion
@@ -23,12 +23,12 @@ public class Panel4 extends JPanel implements ActionListener {
         double perClassComp = Course.percentOfClassCompletion;
 
         DecimalFormat df = new DecimalFormat("0.00");
-        JLabel currGradeLabel = new JLabel(String.valueOf(df.format(currGrade)));
-        currGradeLabel.setBounds(300, 60, 120, 120);
+        JLabel currGradeLabel = new JLabel("Current grade: " + String.valueOf(df.format(currGrade)));
+        currGradeLabel.setBounds(250, 60, 400, 120);
         currGradeLabel.setFont(new Font(currGradeLabel.getFont().getName(), currGradeLabel.getFont().getStyle(), 26));
-
-        JLabel percentClassCompleted = new JLabel(String.valueOf(perClassComp)+"% of course finished!");
-        percentClassCompleted.setBounds(230, 220, 200, 50);
+        
+        JLabel percentClassCompleted = new JLabel(String.valueOf(df.format(perClassComp))+"% of course finished!");
+        percentClassCompleted.setBounds(250, 220, 400, 50);
 
         //add(congrats);
         JComponent pb = new ProgressBar().makeUI((int)Course.percentOfClassCompletion);
