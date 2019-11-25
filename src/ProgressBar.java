@@ -8,7 +8,10 @@ import javax.swing.*;
 import javax.swing.plaf.basic.*;
 import javax.swing.event.*;
 
-// got this code from https://stackoverflow.com/questions/12524121/jprogressbar-how-to-change-colour-based-on-progress
+/*
+ got this code from https://stackoverflow.com/questions/12524121/jprogressbar-how-to-change-colour-based-on-progress
+ from user Aterai. Some changes have been made in order to be able to use it in our Grade Buddy program.
+*/
 
 public class ProgressBar {
 	public JComponent makeUI(int finalGrade) {
@@ -144,50 +147,3 @@ class GradientPalletProgressBarUI extends BasicProgressBarUI {
 		}
 	}
 }
-	
-	//
-	//
-	// // this method will set generalFeedback variable based on overall course grade
-	// public static void generateGeneralFeedback(){
-	// 	if(currentGrade==100){
-	// 		generalFeedback = "Wow a perfect score! Keep up the great work!";
-	// 	}else if(currentGrade<100&&currentGrade>=90){
-	// 		generalFeedback = "You have an A in the course! You're clearly doing something right!";
-	// 	}else if(currentGrade<90&&currentGrade>=80){
-	// 		generalFeedback = "You have a B in the course! You're doing a decent job, but you can do better!";
-	// 	}else if(currentGrade<80&&currentGrade>=70){
-	// 		generalFeedback = "You have a C in the course! You're cutting it pretty close! You can do better!";
-	// 	}else if(currentGrade<70&&currentGrade>=60){
-	// 		generalFeedback = "You have a D in the course! It's not too late to bring your grade up!";
-	// 	}else if(currentGrade<60){
-	// 		generalFeedback = "You have an F in the course! You need to make some major changes!";
-	// 	}
-	// }
-	//
-	// // this method will calculate the best and worst assignment type scores
-	// public static void calculateBestAndWorstAssType(){
-	// 	bestAssignmentTypeScore = scoreEachAssignmentType[0];
-	// 	worstAssignmentTypeScore = scoreEachAssignmentType[0];
-	// 	for(int i = 0; i < scoreEachAssignmentType.length; i++){
-	// 		if(bestAssignmentTypeScore<scoreEachAssignmentType[i]){
-	// 			bestAssignmentTypeScore=scoreEachAssignmentType[i];
-	// 			bestAssignmentLocation = i;
-	// 		}
-	// 	}
-	// 	for(int j = 0; j < scoreEachAssignmentType.length; j++){
-	// 		if(worstAssignmentTypeScore>scoreEachAssignmentType[j]){
-	// 			worstAssignmentTypeScore=scoreEachAssignmentType[j];
-	// 			worstAssignmentLocation = j;
-	// 		}
-	// 	}
-	// }
-	//
-	// // this method creates specific feedback using the variables above
-	// public static void generateSpecificFeedback(){
-	// 	specificFeedback = "Hello " + yourName + ", As of right now your current grade in " +
-	// 			courseName + ", with professor " + professor + ", is: " + currentGrade + ". " +
-	// 			generalFeedback + " You are doing very well on " + assignmentTypeNames[bestAssignmentLocation] +
-	// 			" with a score of: " + bestAssignmentTypeScore + ". However, your weakest assignment type is " +
-	// 			assignmentTypeNames[worstAssignmentLocation] + "with a score of: " + worstAssignmentTypeScore +
-	// 			".";
-	// }

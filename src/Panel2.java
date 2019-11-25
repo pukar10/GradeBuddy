@@ -79,7 +79,7 @@ public class Panel2 extends JPanel implements ActionListener {
 
         // DEBUG
 
-        /*
+        ///*
 
          //check jagged array
         for(int i = 0; i < Course.numAssignmentTypes; i++){
@@ -91,8 +91,8 @@ public class Panel2 extends JPanel implements ActionListener {
         JOptionPane.showMessageDialog(null, "DEBUG: course.courseName\n"+Course.courseName);
         JOptionPane.showMessageDialog(null, "DEBUG: course.goalGrade\n"+Course.goalGrade);
         JOptionPane.showMessageDialog(null, "DEBUG: course.professor\n"+Course.professor);
-        JOptionPane.showMessageDialog(null, "DEBUG: course.yourName\n"+Course.yourName);
+        JOptionPane.showMessageDialog(null, "DEBUG: course.yourName\n"+Course.studentName);
 
-        */
+        //*/
     }
 }

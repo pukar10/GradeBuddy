@@ -142,11 +142,11 @@ public class Panel1 extends JPanel implements ActionListener {
 
         ///*
 
-        // JOptionPane.showMessageDialog(null, "DEBUG: course.numAssignmentTypes\n"+Course.numAssignmentTypes);
-        // JOptionPane.showMessageDialog(null, "DEBUG: course.courseName\n"+Course.courseName);
-        // JOptionPane.showMessageDialog(null, "DEBUG: course.goalGrade\n"+Course.goalGrade);
-        // JOptionPane.showMessageDialog(null, "DEBUG: course.professor\n"+Course.professor);
-        // JOptionPane.showMessageDialog(null, "DEBUG: course.yourName\n"+Course.studentName);
+        JOptionPane.showMessageDialog(null, "DEBUG: course.numAssignmentTypes\n"+Course.numAssignmentTypes);
+        JOptionPane.showMessageDialog(null, "DEBUG: course.courseName\n"+Course.courseName);
+        JOptionPane.showMessageDialog(null, "DEBUG: course.goalGrade\n"+Course.goalGrade);
+        JOptionPane.showMessageDialog(null, "DEBUG: course.professor\n"+Course.professor);
+        JOptionPane.showMessageDialog(null, "DEBUG: course.yourName\n"+Course.studentName);
 
          //*/
     }
